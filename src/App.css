@@ -28,6 +28,10 @@ img {
   height: 200px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 
 @keyframes App-logo-spin {
   from {

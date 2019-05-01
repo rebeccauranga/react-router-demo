@@ -5,11 +5,14 @@ import Home from './Home';
 import About from './About';
 import Cats from './Cats';
 import PageNotFound from './PageNotFound';
+import Header from './Header'
+import Cat from './Cat';
 
 import {
   Link,
   Route,
-  Switch
+  Switch,
+  Redirect,
 } from 'react-router-dom';
 
 
@@ -32,6 +35,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+      <Header />
       <h1>{this.state.counter}</h1>
       <button onClick={this._incrementCountUsingArrow}>Increment</button>
       <br />
@@ -48,7 +52,9 @@ class App extends React.Component {
         <Route path='/about' component={About} />
         <Route path='/cats' component={Cats} />
         <Route component={PageNotFound} />
+
       </Switch>
+        <Route path='/cats/:cat' component={Cat} />
       </div>
     );
   }
